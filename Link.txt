@@ -1,0 +1,5 @@
+RN Doc: https://facebook.github.io/react-native/docs/getting-started.html
+
+RN Elements: https://react-native-training.github.io/react-native-elements/
+
+RN Icons: https://material.io/icons/
