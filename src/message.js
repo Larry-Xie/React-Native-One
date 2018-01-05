@@ -11,7 +11,7 @@ class MyHeader extends Component {
     render() {
         return (
             <View style={styles.myHeader}>
-                <Text style={styles.headerText}>我的管家</Text>
+                <Text style={styles.headerText}>消息</Text>
             </View>
         );
     }
@@ -25,21 +25,20 @@ class MyContent extends Component {
     render() {
         const lists = [
             {
-                title: '无人机注册',
-                icon: 'contacts'
+                title: '返航通知',
+                subtitle: '无返航通知',
+                icon: 'location-on'
             },
             {
-                title: '飞行计划申请',
-                icon: 'touch-app'
+                title: '报批通知',
+                subtitle: '无报批通知',
+                icon: 'work'
             },
             {
-                title: '飞行记录',
-                icon: 'history'
-            },
-            {
-                title: '保险服务',
-                icon: 'beenhere'
-            },
+                title: '管制通知',
+                subtitle: '无管制通知',
+                icon: 'flight'
+            }
         ];
         return (
             <List>
@@ -48,6 +47,7 @@ class MyContent extends Component {
                         <ListItem
                             key={i}
                             title={item.title}
+                            subtitle={item.subtitle}
                             leftIcon={{name: item.icon}}
                         />
                     ))
@@ -57,7 +57,7 @@ class MyContent extends Component {
     }
 }
 
-export default class StewardPage extends Component {
+export default class MessagePage extends Component {
     render() {
         return (
             <View style={styles.container}>

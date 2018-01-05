@@ -3,6 +3,7 @@ import ScrollableTabView from 'react-native-scrollable-tab-view';
 
 import HomePage from './src/home';
 import MainTabBar from './src/main-tab-bar';
+import MessagePage from './src/message';
 import StewardPage from './src/steward';
 
 export default class App extends Component {
@@ -11,8 +12,8 @@ export default class App extends Component {
             <ScrollableTabView tabBarPosition="bottom" renderTabBar={() => <MainTabBar />}>
                 <HomePage tabLabel="wifi-tethering" />
                 <StewardPage tabLabel="widgets" />
-                <StewardPage tabLabel="message" />
-                <StewardPage tabLabel="person-pin" />
+                <MessagePage tabLabel="message" />
+                <MessagePage tabLabel="person-pin" />
             </ScrollableTabView>
         );
     }
