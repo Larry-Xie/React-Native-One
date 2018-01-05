@@ -57,7 +57,7 @@ export default MainTabBar = createReactClass({
         return (
             <View style={[styles.tabs, {backgroundColor: this.props.backgroundColor, }, this.props.style, ]}>
                 {this.props.tabs.map((name, page) => this.renderTab(name, page))}
-                <Animated.View style={[tabUnderlineStyle, {transform: [{ translateX }]}]} />
+                <Animated.View style={[{transform: [{ translateX }]}]} />
             </View>
         );
     },
@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingBottom: 5,
     },
 
     tabs: {
