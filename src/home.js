@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Image, ScrollView, StyleSheet, Text, TextInput, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, TextInput, View} from 'react-native';
 import {Icon} from 'react-native-elements';
 import MapView from 'react-native-maps';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
