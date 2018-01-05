@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Image, ScrollView, StyleSheet, Text, TextInput, View} from 'react-native';
-import {Icon, SearchBar} from 'react-native-elements'
+import {Icon} from 'react-native-elements';
+import MapView from 'react-native-maps';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 
 class MyHeader extends Component {
@@ -31,41 +32,18 @@ class MyContent extends Component {
     }
 
     render() {
-        let pic = {
-            uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
-        };
         return (
-            <Image source={require('../images/map.jpg')} style={styles.contentImage}/>
-        );
-    }
-}
-
-class MyFooter extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {text: ''};
-    }
-
-    render() {
-        return (
-            <View style={styles.myFooter}>
-                <View>
-                    <Icon name="wifi-tethering" color="grey" />
-                    <Text style={{color:'grey'}}>Flying</Text>
-                </View>
-                <View>
-                    <Icon name="widgets" color="grey" />
-                    <Text style={{color:'grey'}}>Steward</Text>
-                </View>
-                <View>
-                    <Icon name="message" color="grey" />
-                    <Text style={{color:'grey'}}>Message</Text>
-                </View>
-                <View>
-                    <Icon name="person-pin" color="grey" />
-                    <Text style={{color:'grey'}}>Profile</Text>
-                </View>
-            </View>
+            <MapView 
+                style={styles.map}
+                initialRegion={{
+                    latitude: 32.0603,
+                    longitude: 118.7969,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421
+                }}
+                showsUserLocation={true}
+                followsUserLocation={true}
+            />
         );
     }
 }
@@ -89,6 +67,14 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
 
+    map: {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+    },
+
     header: {
         height: 80,
         paddingTop: 30,
@@ -96,13 +82,8 @@ const styles = StyleSheet.create({
     },
 
     content: {
-        height: 662,
+        height: 672,
         backgroundColor: 'skyblue'
-    },
-
-    footer: {
-        height: 70,
-        backgroundColor: 'white'
     },
 
     myHeader: {
@@ -118,17 +99,5 @@ const styles = StyleSheet.create({
         borderRadius: 3,
         width: 280,
         backgroundColor: 'white',
-    },
-
-    contentImage: {
-        width: 375,
-        height: 662,
-    },
-
-    myFooter: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-around',
     },
 });
