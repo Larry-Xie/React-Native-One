@@ -13,7 +13,7 @@ class MyHeader extends Component {
     render() {
         return (
             <View style={styles.myHeader}>
-                <Icon name="menu" color="white" />
+                <Icon name="menu" color="white" onPress={() => this.props.navigate('MyUAV') } />
                 <TextInput
                     style={styles.headerText}
                     placeholder="Search"
@@ -52,7 +52,7 @@ export default class HomePage extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.header}><MyHeader /></View>
+                <View style={styles.header}><MyHeader navigate={this.props.navigate} /></View>
                 <View style={styles.content}><MyContent /></View>
             </View>
         );
